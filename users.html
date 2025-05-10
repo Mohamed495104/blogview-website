@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlogView Dashboard - Users</title>
+    <link rel="icon" href="/images/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/dataFunctions.js" defer></script>
+    <script src="js/users.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>BlogView</h1>
+            </div>
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="posts.html">Blog Posts</a></li>
+                    <li><a href="users.html" class="active">Users</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h2>Users</h2>
+                <p>View and explore user profiles</p>
+            </div>
+        </section>
+
+        <section class="users-controls">
+            <div class="container">
+                <div class="filter-sort">
+                    <div class="search-box">
+                        <input type="text" id="user-search" placeholder="Search users...">
+                        <button id="search-users-btn">Search</button>
+                    </div>
+                    <div class="filter-options">
+                        <label for="gender-filter">Filter by gender:</label>
+                        <select id="gender-filter">
+                            <option value="">All</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                    </div>
+                    <div class="sort-options">
+                        <label for="sort-users">Sort by:</label>
+                        <select id="sort-users">
+                            <option value="name">Name (A-Z)</option>
+                            <option value="age">Age (Youngest First)</option>
+                            <option value="age-desc">Age (Oldest First)</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="users-container">
+            <div class="container">
+                <div class="users-grid" id="users-grid">
+                    <!-- Users will be loaded here dynamically -->
+                    <div class="loading">Loading users...</div>
+                </div>
+                <div class="pagination" id="users-pagination">
+                    <!-- Pagination controls will be added here -->
+                </div>
+            </div>
+        </section>
+
+        <section class="user-detail-modal hidden" id="user-modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <div class="user-detail-content" id="user-detail-content">
+                    <!-- User details will be loaded here -->
+                </div>
+                <div class="user-posts">
+                    <h3>User's Posts</h3>
+                    <div id="user-posts-list">
+                        <!-- User's posts will be loaded here -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="add-user">
+            <div class="container">
+                <h3>Add New User</h3>
+                <form id="add-user-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="user-firstname">First Name:</label>
+                            <input type="text" id="user-firstname" name="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="user-lastname">Last Name:</label>
+                            <input type="text" id="user-lastname" name="lastName" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="user-email">Email:</label>
+                            <input type="email" id="user-email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="user-age">Age:</label>
+                            <input type="number" id="user-age" name="age" min="13" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="user-gender">Gender:</label>
+                            <select id="user-gender" name="gender" required>
+                                <option value="">Select gender</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="user-username">Username:</label>
+                            <input type="text" id="user-username" name="username" required>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn">Add User</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 BlogView Dashboard. Created by Mohamed Ijas - 8917822</p>
+        </div>
+    </footer>
+</body>
+
+</html>

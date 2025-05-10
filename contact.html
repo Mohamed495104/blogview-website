@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlogView Dashboard - Contact</title>
+    <link rel="icon" href="/images/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/dataFunctions.js" defer></script>
+    <script src="js/contact.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>BlogView</h1>
+            </div>
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="posts.html">Blog Posts</a></li>
+                    <li><a href="users.html">Users</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h2>Contact Us</h2>
+                <p>Have questions or feedback? Get in touch with our team.</p>
+            </div>
+        </section>
+
+        <section class="contact-form">
+            <div class="container">
+                <div class="form-container">
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="name">Your Name:</label>
+                            <input type="text" id="name" name="name" required>
+                            <span class="error-message" id="name-error"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address:</label>
+                            <input type="email" id="email" name="email" required>
+                            <span class="error-message" id="email-error"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject:</label>
+                            <input type="text" id="subject" name="subject" required>
+                            <span class="error-message" id="subject-error"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message:</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                            <span class="error-message" id="message-error"></span>
+                        </div>
+                        <div class="form-group">
+                            <label>Preferred Contact Method:</label>
+                            <div class="radio-group">
+                                <input type="radio" id="contact-email" name="contactMethod" value="email" checked>
+                                <label for="contact-email">Email</label>
+                                <input type="radio" id="contact-phone" name="contactMethod" value="phone">
+                                <label for="contact-phone">Phone</label>
+                            </div>
+                        </div>
+                        <div class="form-group phone-input hidden" id="phone-container">
+                            <label for="phone">Phone Number:</label>
+                            <input type="tel" id="phone" name="phone" pattern="[0-9]{10}">
+                            <span class="hint">Format: 10 digits with no spaces or dashes</span>
+                            <span class="error-message" id="phone-error"></span>
+                        </div>
+                        <div class="form-group">
+                            <label>
+                                <input type="checkbox" id="newsletter" name="newsletter">
+                                Subscribe to our newsletter
+                            </label>
+                        </div>
+                        <button type="submit" class="btn" id="submit-btn">Send Message</button>
+                    </form>
+                </div>
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <div class="info-item">
+                        <span class="icon">✉️</span>
+                        <p>info@blogview.example.com</p>
+                    </div>
+                    <div class="info-item">
+                        <span class="icon">📞</span>
+                        <p>(555) 123-4567</p>
+                    </div>
+                    <div class="info-item">
+                        <span class="icon">📍</span>
+                        <p>123 Blog Street, Web City, 10101</p>
+                    </div>
+                    <div class="office-hours">
+                        <h4>Office Hours</h4>
+                        <p>Monday - Friday: 9:00 AM - 5:00 PM</p>
+                        <p>Saturday - Sunday: Closed</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="success-message hidden" id="success-message">
+            <div class="container">
+                <div class="success-content">
+                    <h3>Thank You!</h3>
+                    <p>Your message has been sent successfully. We'll get back to you soon.</p>
+                    <button class="btn" id="new-message-btn">Send Another Message</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 BlogView Dashboard. Created by Mohamed Ijas - 8917822</p>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlogView Dashboard - Post Details</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="/images/favicon.png" type="image/x-icon">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/dataFunctions.js" defer></script>
+    <script src="js/post-details.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>BlogView</h1>
+            </div>
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="posts.html">Blog Posts</a></li>
+                    <li><a href="users.html">Users</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="breadcrumb">
+            <div class="container">
+                <nav aria-label="breadcrumb">
+                    <ol>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="posts.html">Blog Posts</a></li>
+                        <li id="post-title-breadcrumb">Post Details</li>
+                    </ol>
+                </nav>
+            </div>
+        </section>
+
+        <section class="post-detail">
+            <div class="container">
+                <div id="post-loading" class="loading">Loading post details...</div>
+                <article id="post-content" class="hidden">
+                    <header class="post-header">
+                        <h2 id="post-title"></h2>
+                        <div class="post-meta">
+                            <span class="post-author">By <a id="post-author-link" href="#">Author Name</a></span>
+                            <span class="post-reactions"><span id="post-reactions-count">0</span> reactions</span>
+                            <div class="post-tags" id="post-tags">
+                                <!-- Tags will be inserted here -->
+                            </div>
+                        </div>
+                    </header>
+                    <div class="post-body" id="post-body">
+                        <!-- Post content will be inserted here -->
+                    </div>
+                    <div class="post-actions">
+                        <button id="like-post" class="btn-sm">👍 Like</button>
+                        <button id="edit-post" class="btn-sm">Edit Post</button>
+                        <button id="delete-post" class="btn-sm btn-danger">Delete Post</button>
+                    </div>
+                </article>
+
+                <div id="edit-form-container" class="edit-form hidden">
+                    <h3>Edit Post</h3>
+                    <form id="edit-post-form">
+                        <div class="form-group">
+                            <label for="edit-title">Title:</label>
+                            <input type="text" id="edit-title" name="title" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="edit-body">Content:</label>
+                            <textarea id="edit-body" name="body" rows="5" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="edit-tags">Tags (comma separated):</label>
+                            <input type="text" id="edit-tags" name="tags">
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn">Save Changes</button>
+                            <button type="button" id="cancel-edit" class="btn-secondary">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="comments-section">
+            <div class="container">
+                <h3>Comments (<span id="comment-count">0</span>)</h3>
+                <div id="comments-container">
+                    <!-- Comments will be loaded here -->
+                    <div id="comments-loading" class="loading">Loading comments...</div>
+                </div>
+
+                <div class="add-comment">
+                    <h4>Add a Comment</h4>
+                    <form id="add-comment-form">
+                        <div class="form-group">
+                            <label for="comment-body">Your comment:</label>
+                            <textarea id="comment-body" name="body" rows="3" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="comment-userId">Your User ID:</label>
+                            <input type="number" id="comment-userId" name="userId" min="1" required>
+                        </div>
+                        <button type="submit" class="btn">Submit Comment</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="related-posts">
+            <div class="container">
+                <h3>Related Posts</h3>
+                <div class="post-grid" id="related-posts">
+                    <!-- Related posts will be loaded here -->
+                    <div id="related-loading" class="loading">Loading related posts...</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 BlogView Dashboard. Created by Mohamed Ijas - 8917822</p>
+        </div>
+    </footer>
+</body>
+
+</html>

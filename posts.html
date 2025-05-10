@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlogView Dashboard - Blog Posts</title>
+    <link rel="icon" href="/images/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/dataFunctions.js" defer></script>
+    <script src="js/posts.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>BlogView</h1>
+            </div>
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="posts.html" class="active">Blog Posts</a></li>
+                    <li><a href="users.html">Users</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h2>Blog Posts</h2>
+                <p>Explore all blog posts from our community</p>
+            </div>
+        </section>
+
+        <section class="posts-controls">
+            <div class="container">
+                <div class="filter-sort">
+                    <div class="search-box">
+                        <input type="text" id="post-search" placeholder="Search posts...">
+                        <button id="search-btn">Search</button>
+                    </div>
+                    <div class="filter-options">
+                        <label for="tag-filter">Filter by tag:</label>
+                        <select id="tag-filter">
+                            <option value="">All tags</option>
+                            <!-- Tag options will be populated dynamically -->
+                        </select>
+                    </div>
+                    <div class="sort-options">
+                        <label for="sort-posts">Sort by:</label>
+                        <select id="sort-posts">
+                            <option value="recent">Most Recent</option>
+                            <option value="reactions">Most Reactions</option>
+                            <option value="title">Title (A-Z)</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="posts-container">
+            <div class="container">
+                <div class="posts-grid" id="posts-grid">
+                    <!-- Posts will be loaded here dynamically -->
+                    <div class="loading">Loading posts...</div>
+                </div>
+                <div class="pagination" id="pagination">
+                    <!-- Pagination controls will be added here -->
+                </div>
+            </div>
+        </section>
+
+        <section class="add-post">
+            <div class="container">
+                <h3>Add New Post</h3>
+                <form id="add-post-form">
+                    <div class="form-group">
+                        <label for="post-title">Title:</label>
+                        <input type="text" id="post-title" name="title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="post-body">Content:</label>
+                        <textarea id="post-body" name="body" rows="5" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="post-tags">Tags (comma separated):</label>
+                        <input type="text" id="post-tags" name="tags">
+                    </div>
+                    <div class="form-group">
+                        <label for="post-userId">User ID:</label>
+                        <input type="number" id="post-userId" name="userId" min="1" required>
+                    </div>
+                    <button type="submit" class="btn">Add Post</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 BlogView Dashboard. Created by Mohamed Ijas - 8917822</p>
+        </div>
+    </footer>
+</body>
+
+</html>

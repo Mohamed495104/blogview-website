@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlogView Dashboard - Home</title>
+    <link rel="icon" href="/images/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/dataFunctions.js" defer></script>
+    <script src="js/main.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>BlogView</h1>
+            </div>
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="posts.html">Blog Posts</a></li>
+                    <li><a href="users.html">Users</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h2>Welcome to BlogView Dashboard</h2>
+                <p>Explore blog posts, comments, and user information from our interactive dashboard.</p>
+                <a href="posts.html" class="btn">View Blog Posts</a>
+            </div>
+        </section>
+
+        <section class="about">
+            <div class="container">
+                <h2>About This Dashboard</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>This interactive dashboard displays blog posts and user information fetched from the
+                            DummyJSON API. You can view posts, filter content, sort data, and interact with various
+                            elements to explore the blog ecosystem.</p>
+                        <p>The application demonstrates techniques in DOM manipulation, event handling, data fetching
+                            and processing using asynchronous JavaScript, and responsive design principles.</p>
+                        <h3>Features:</h3>
+                        <ul>
+                            <li>View blog posts with comments</li>
+                            <li>Filter and sort content</li>
+                            <li>Search functionality</li>
+                            <li>User profiles with details</li>
+                            <li>Contact form with validation</li>
+                        </ul>
+                    </div>
+                    <div class="api-info">
+                        <h3>About DummyJSON API</h3>
+                        <p>This project uses <a href="https://dummyjson.com" target="_blank">DummyJSON.com</a>, a free,
+                            open-source API that provides dummy data for testing and prototyping.</p>
+                        <p>The API offers multiple endpoints including posts, users, products, and more with full CRUD
+                            functionality.</p>
+                        <div class="stats-container">
+                            <div class="stat-box" id="post-count">
+                                <span class="stat-number">--</span>
+                                <span class="stat-label">Blog Posts</span>
+                            </div>
+                            <div class="stat-box" id="user-count">
+                                <span class="stat-number">--</span>
+                                <span class="stat-label">Users</span>
+                            </div>
+                            <div class="stat-box" id="comment-count">
+                                <span class="stat-number">--</span>
+                                <span class="stat-label">Comments</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="featured-posts">
+            <div class="container">
+                <h2>Featured Posts</h2>
+                <div class="post-grid" id="featured-posts-container">
+                    <!-- Featured posts will be loaded here dynamically -->
+                    <div class="post-loading">Loading featured posts...</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 BlogView Dashboard. Created by Mohamed Ijas - 8917822</p>
+            </p>
+        </div>
+    </footer>
+</body>
+
+</html>
